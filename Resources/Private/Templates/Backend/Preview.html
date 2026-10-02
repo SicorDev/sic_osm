@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    Page module preview of the content element "OpenStreetMap" (EventListener\PageContentPreview).
+    The thumbnail is the static map of the frontend, cropped like there (object-fit: cover), with the pin
+    at the same relative position. Styles: Resources/Public/Css/backend.css (global backend stylesheet).
+</f:comment>
+<f:variable name="ll" value="LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:" />
+<div class="sic-osm-preview">
+    <f:if condition="{image}">
+        <div class="sic-osm-preview__canvas{f:if(condition: focusLow, then: ' sic-osm-preview__canvas--focus-low')}{f:if(condition: map.grayscale, then: ' sic-osm-preview__canvas--grayscale')}">
+            <img class="sic-osm-preview__image" src="{image.url}" alt="" loading="lazy" />
+            <f:if condition="{marker}">
+                <span class="sic-osm-preview__marker">
+                    <f:if condition="{marker.svg}">
+                        <f:then>{marker.svg -> f:format.raw()}</f:then>
+                        <f:else><img class="sic-osm-preview__marker-image" src="{marker.url}" alt="" /></f:else>
+                    </f:if>
+                </span>
+            </f:if>
+        </div>
+    </f:if>
+    <f:if condition="{error}">
+        <p class="sic-osm-preview__message callout callout-warning"><f:translate key="{ll}{error}" /></p>
+    </f:if>
+    <f:if condition="{typoScriptMissing}">
+        <p class="sic-osm-preview__message callout callout-warning"><f:translate key="{ll}preview.typoScriptMissing" /></p>
+    </f:if>
+    <f:if condition="{hidden}">
+        <p class="sic-osm-preview__message callout callout-info"><f:translate key="{ll}preview.hidden" /></p>
+    </f:if>
+    <dl class="sic-osm-preview__details">
+        <f:if condition="{map}">
+            <dt><f:translate key="{ll}preview.map" /></dt>
+            <dd>
+                <f:if condition="{editUrl}">
+                    <f:then><a href="{editUrl}">{map.title}</a></f:then>
+                    <f:else>{map.title}</f:else>
+                </f:if>
+                <span class="text-body-secondary">[{map.uid}]</span>
+            </dd>
+        </f:if>
+        <dt><f:translate key="{ll}preview.view" /></dt>
+        <dd><f:translate key="{ll}preview.view.{viewSetting}" /></dd>
+        <f:if condition="{layerLabel}">
+            <dt><f:translate key="{ll}preview.layer" /></dt>
+            <dd><f:translate key="{ll}{layerLabel}" /></dd>
+        </f:if>
+    </dl>
+</div>
+
+</html>

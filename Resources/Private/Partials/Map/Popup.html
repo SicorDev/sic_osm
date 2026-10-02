@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    Info box, rendered twice per map: on the map above the pin (with close button and tip), and below
+    the map (modifier "below", always visible). CSS shows exactly one of them, depending on the width of
+    the map (container query) – on narrow maps the box would not fit onto the map.
+</f:comment>
+<div class="sic-osm__popup{f:if(condition: below, then: ' sic-osm__popup--below')}">
+    <f:if condition="{below}">
+        <f:else>
+            <label class="sic-osm__popup-close" for="{layout.domId}-popup" title="{f:translate(key: 'map.popup.close')}" aria-hidden="true">&#215;</label>
+        </f:else>
+    </f:if>
+    <div class="sic-osm__popup-content">
+        <strong class="sic-osm__popup-title">{map.popupTitle}</strong>
+        <f:if condition="{map.address}">
+            <address class="sic-osm__popup-address">{map.address -> f:format.nl2br()}</address>
+        </f:if>
+        <f:if condition="{map.popupText}">
+            <div class="sic-osm__popup-info"><f:format.html>{map.popupText}</f:format.html></div>
+        </f:if>
+    </div>
+    <f:if condition="{below}">
+        <f:else>
+            <div class="sic-osm__popup-tip" aria-hidden="true"></div>
+        </f:else>
+    </f:if>
+</div>
+
+</html>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3DataStructure>
+    <ROOT>
+        <type>array</type>
+        <el>
+            <settings.map>
+                <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.map</label>
+                <config>
+                    <type>select</type>
+                    <renderType>selectSingle</renderType>
+                    <foreign_table>tx_sicosm_domain_model_map</foreign_table>
+                    <foreign_table_where>ORDER BY tx_sicosm_domain_model_map.title</foreign_table_where>
+                    <items>
+                        <numIndex index="0">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.map.choose</label>
+                            <value>0</value>
+                        </numIndex>
+                    </items>
+                    <default>0</default>
+                </config>
+            </settings.map>
+            <settings.view>
+                <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.view</label>
+                <onChange>reload</onChange>
+                <config>
+                    <type>select</type>
+                    <renderType>selectSingle</renderType>
+                    <default>static</default>
+                    <items>
+                        <numIndex index="0">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.view.static</label>
+                            <value>static</value>
+                        </numIndex>
+                        <numIndex index="1">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.view.click</label>
+                            <value>click</value>
+                        </numIndex>
+                        <numIndex index="2">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.view.dynamic</label>
+                            <value>dynamic</value>
+                        </numIndex>
+                    </items>
+                </config>
+            </settings.view>
+            <settings.layer>
+                <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer</label>
+                <description>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.description</description>
+                <displayCond>FIELD:settings.view:IN:dynamic,click</displayCond>
+                <config>
+                    <type>select</type>
+                    <renderType>selectSingle</renderType>
+                    <default>osm</default>
+                    <!-- Preview images (same place and zoom level) as clickable image list below the select, so editors can compare the styles -->
+                    <fieldWizard>
+                        <selectIcons>
+                            <disabled>0</disabled>
+                        </selectIcons>
+                    </fieldWizard>
+                    <items>
+                        <numIndex index="0">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.osm</label>
+                            <value>osm</value>
+                            <icon>EXT:sic_osm/Resources/Public/Images/Layers/osm.png</icon>
+                        </numIndex>
+                        <numIndex index="1">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.osmde</label>
+                            <value>osmde</value>
+                            <icon>EXT:sic_osm/Resources/Public/Images/Layers/osmde.png</icon>
+                        </numIndex>
+                        <numIndex index="2">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.oepnv</label>
+                            <value>oepnv</value>
+                            <icon>EXT:sic_osm/Resources/Public/Images/Layers/oepnv.png</icon>
+                        </numIndex>
+                        <numIndex index="3">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.hot</label>
+                            <value>hot</value>
+                            <icon>EXT:sic_osm/Resources/Public/Images/Layers/hot.png</icon>
+                        </numIndex>
+                        <numIndex index="4">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.opentopomap</label>
+                            <value>opentopomap</value>
+                            <icon>EXT:sic_osm/Resources/Public/Images/Layers/opentopomap.png</icon>
+                        </numIndex>
+                        <numIndex index="5">
+                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.cyclosm</label>
+                            <value>cyclosm</value>
+                            <icon>EXT:sic_osm/Resources/Public/Images/Layers/cyclosm.png</icon>
+                        </numIndex>
+                    </items>
+                </config>
+            </settings.layer>
+        </el>
+    </ROOT>
+</T3DataStructure>

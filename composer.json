@@ -1,0 +1,31 @@
+{
+    "name": "sicor/sic-osm",
+    "description": "OpenStreetMap – one place on a map: static image rendered on the server (GDPR-friendly), interactive Leaflet map or two-click solution, with info box, geocoding and backend map preview",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "SICOR Dev Team",
+            "email": "dev@sicor.de",
+            "role": "Developer"
+        },
+        {
+            "name": "Claude (Anthropic)",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+        "typo3/cms-core": "^14.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SICOR\\SicOsm\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "sic_osm"
+        }
+    }
+}

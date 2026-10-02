@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="Messages" date="2026-09-24" product-name="sic_osm">
+        <header/>
+        <body>
+            <trans-unit id="map.notFound">
+                <source>No map selected or the map is hidden.</source>
+                <target>Keine Karte ausgewählt oder die Karte ist verborgen.</target>
+            </trans-unit>
+            <trans-unit id="map.renderError">
+                <source>The map is currently not available.</source>
+                <target>Die Karte ist derzeit nicht verfügbar.</target>
+            </trans-unit>
+            <trans-unit id="map.alt">
+                <source>Map: %s</source>
+                <target>Karte: %s</target>
+            </trans-unit>
+            <trans-unit id="map.attribution.osm">
+                <source><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors]]></source>
+                <target><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>-Mitwirkende]]></target>
+            </trans-unit>
+            <trans-unit id="map.attribution.opentopomap">
+                <source><![CDATA[Map data: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors, SRTM | Map style: © <a href="https://opentopomap.org" target="_blank" rel="noopener noreferrer">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA</a>)]]></source>
+                <target><![CDATA[Kartendaten: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>-Mitwirkende, SRTM | Kartendarstellung: © <a href="https://opentopomap.org" target="_blank" rel="noopener noreferrer">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA</a>)]]></target>
+            </trans-unit>
+            <trans-unit id="map.attribution.cyclosm">
+                <source><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors | Map style: <a href="https://www.cyclosm.org" target="_blank" rel="noopener noreferrer">CyclOSM</a>, hosted by <a href="https://openstreetmap.fr" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>]]></source>
+                <target><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>-Mitwirkende | Kartendarstellung: <a href="https://www.cyclosm.org" target="_blank" rel="noopener noreferrer">CyclOSM</a>, gehostet von <a href="https://openstreetmap.fr" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>]]></target>
+            </trans-unit>
+            <trans-unit id="map.noscript">
+                <source>The interactive map requires JavaScript.</source>
+                <target>Die interaktive Karte benötigt JavaScript.</target>
+            </trans-unit>
+            <trans-unit id="map.openOsm">
+                <source>Open map on openstreetmap.org</source>
+                <target>Karte auf openstreetmap.org öffnen</target>
+            </trans-unit>
+            <trans-unit id="map.noPosition">
+                <source>The map has no position yet.</source>
+                <target>Die Karte hat noch keine Position.</target>
+            </trans-unit>
+            <trans-unit id="map.popup.toggle">
+                <source>Show or hide info box</source>
+                <target>Infobox ein- oder ausblenden</target>
+            </trans-unit>
+            <trans-unit id="map.popup.close">
+                <source>Close info box</source>
+                <target>Infobox schließen</target>
+            </trans-unit>
+            <trans-unit id="map.attribution.osmde">
+                <source><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors | Map style: <a href="https://www.openstreetmap.de" target="_blank" rel="noopener noreferrer">OpenStreetMap Germany</a> (FOSSGIS e.V.)]]></source>
+                <target><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>-Mitwirkende | Kartendarstellung: <a href="https://www.openstreetmap.de" target="_blank" rel="noopener noreferrer">OpenStreetMap Deutschland</a> (FOSSGIS e.V.)]]></target>
+            </trans-unit>
+            <trans-unit id="map.attribution.oepnv">
+                <source><![CDATA[Map <a href="https://memomaps.de" target="_blank" rel="noopener noreferrer">memomaps.de</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA</a>, map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors (<a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener noreferrer">ODbL</a>)]]></source>
+                <target><![CDATA[Karte <a href="https://memomaps.de" target="_blank" rel="noopener noreferrer">memomaps.de</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA</a>, Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>-Mitwirkende (<a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener noreferrer">ODbL</a>)]]></target>
+            </trans-unit>
+            <trans-unit id="map.attribution.hot">
+                <source><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors | Map style: <a href="https://www.hotosm.org" target="_blank" rel="noopener noreferrer">Humanitarian OpenStreetMap Team</a>, hosted by <a href="https://openstreetmap.fr" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>]]></source>
+                <target><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>-Mitwirkende | Kartendarstellung: <a href="https://www.hotosm.org" target="_blank" rel="noopener noreferrer">Humanitarian OpenStreetMap Team</a>, gehostet von <a href="https://openstreetmap.fr" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>]]></target>
+            </trans-unit>
+            <trans-unit id="map.activate">
+                <source>Load interactive map</source>
+                <target>Interaktive Karte laden</target>
+            </trans-unit>
+            <trans-unit id="map.activate.note">
+                <source>The map tiles are then loaded from %s – your IP address is transmitted to this server.</source>
+                <target>Dabei werden Kartenkacheln von %s geladen und Ihre IP-Adresse an diesen Server übertragen.</target>
+            </trans-unit>
+            <trans-unit id="map.activate.remember">
+                <source>Remember for this visit</source>
+                <target>Für diesen Besuch merken</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

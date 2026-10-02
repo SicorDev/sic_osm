@@ -1,0 +1,14 @@
+# cat=basic//10; type=string; label=Tile URL: Map tiles (256 px) used to render static map images. Placeholders {z}, {x}, {y} and optionally {s} (subdomain a/b/c)
+tileUrl = https://tile.openstreetmap.org/{z}/{x}/{y}.png
+
+# cat=basic//20; type=string; label=Contact e-mail: Sent to the tile server and Nominatim (User-Agent, email parameter), as recommended by their usage policies (optional)
+contactEmail =
+
+# cat=basic//25; type=string; label=Nominatim URL: Geocoding service used to determine coordinates from the address of a map record
+nominatimUrl = https://nominatim.openstreetmap.org/search
+
+# cat=basic//28; type=int+; label=Static image width (px): Rendered width of static map images (400–4000). The map is as wide as its container; narrower containers crop the image at the sides, so the map keeps its scale
+imageWidth = 2000
+
+# cat=basic//30; type=int+; label=Maximum age (days): Static map images older than this are rendered again, so they show current OSM data. 0 = never
+maxAge = 90

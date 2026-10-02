@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="Messages" date="2026-09-24" product-name="sic_osm">
+        <header/>
+        <body>
+            <!-- Plugin -->
+            <trans-unit id="plugin.map.title">
+                <source>OpenStreetMap</source>
+                <target>OpenStreetMap</target>
+            </trans-unit>
+            <trans-unit id="plugin.map.description">
+                <source>Shows a map as a static image (no data sent to third parties) or as an interactive map.</source>
+                <target>Zeigt eine Karte als statisches Bild (keine Datenübertragung an Dritte) oder als interaktive Karte.</target>
+            </trans-unit>
+            <!-- FlexForm -->
+            <trans-unit id="flexform.map">
+                <source>Map</source>
+                <target>Karte</target>
+            </trans-unit>
+            <trans-unit id="flexform.map.choose">
+                <source>– Please choose a map –</source>
+                <target>– Bitte Karte wählen –</target>
+            </trans-unit>
+            <trans-unit id="flexform.view">
+                <source>View</source>
+                <target>Ansicht</target>
+            </trans-unit>
+            <trans-unit id="flexform.view.static">
+                <source>Static image (no data sent to third parties)</source>
+                <target>Statisches Bild (keine Datenübertragung an Dritte)</target>
+            </trans-unit>
+            <trans-unit id="flexform.view.dynamic">
+                <source>Interactive map (map tiles are loaded from external servers)</source>
+                <target>Interaktive Karte (Kartenkacheln werden von externen Servern geladen)</target>
+            </trans-unit>
+            <trans-unit id="flexform.layer">
+                <source>Map layer</source>
+                <target>Kartenstil</target>
+            </trans-unit>
+            <trans-unit id="flexform.layer.osm">
+                <source>OpenStreetMap Standard</source>
+                <target>OpenStreetMap Standard</target>
+            </trans-unit>
+            <trans-unit id="flexform.layer.opentopomap">
+                <source>OpenTopoMap (topographic, max. zoom 17)</source>
+                <target>OpenTopoMap (topografisch, max. Zoom 17)</target>
+            </trans-unit>
+            <trans-unit id="flexform.layer.cyclosm">
+                <source>CyclOSM (cycling)</source>
+                <target>CyclOSM (Fahrrad)</target>
+            </trans-unit>
+            <!-- Table tx_sicosm_domain_model_map -->
+            <trans-unit id="tx_sicosm_domain_model_map">
+                <source>Map</source>
+                <target>Karte</target>
+            </trans-unit>
+            <trans-unit id="tab.marker">
+                <source>Marker</source>
+                <target>Marker</target>
+            </trans-unit>
+            <trans-unit id="palette.position">
+                <source>Position</source>
+                <target>Position</target>
+            </trans-unit>
+            <trans-unit id="palette.size">
+                <source>Size</source>
+                <target>Größe</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.title">
+                <source>Title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.title.description">
+                <source>Shown in the backend and used as alternative text of the map image.</source>
+                <target>Wird im Backend angezeigt und als Alternativtext des Kartenbilds verwendet.</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.latitude">
+                <source>Latitude</source>
+                <target>Breitengrad</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.latitude.description">
+                <source>Decimal degrees between -90 and 90, e.g. 51.9621672</source>
+                <target>Dezimalgrad zwischen -90 und 90, z. B. 51.9621672</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.longitude">
+                <source>Longitude</source>
+                <target>Längengrad</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.longitude.description">
+                <source>Decimal degrees between -180 and 180, e.g. 7.6281483</source>
+                <target>Dezimalgrad zwischen -180 und 180, z. B. 7.6281483</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.height">
+                <source>Height (px)</source>
+                <target>Höhe (px)</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.image_format">
+                <source>Image format</source>
+                <target>Bildformat</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.image_format.description">
+                <source>Only for the static view. JPG is smaller, PNG is sharper.</source>
+                <target>Nur für die statische Ansicht. JPG ist kleiner, PNG schärfer.</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.show_marker">
+                <source>Show marker at map center</source>
+                <target>Marker in der Kartenmitte anzeigen</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.marker">
+                <source>Custom marker image</source>
+                <target>Eigene Markergrafik</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.marker.description">
+                <source>Optional. Replaces the default pin; anchored at its bottom centre like the pin.</source>
+                <target>Optional. Ersetzt die Standard-Stecknadel; wird wie die Stecknadel unten mittig verankert.</target>
+            </trans-unit>
+            <trans-unit id="palette.address">
+                <source>Address</source>
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="palette.popup">
+                <source>Popup</source>
+                <target>Popup</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.address">
+                <source>Address</source>
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.address.description">
+                <source>Free text, line breaks allowed, e.g. "Prinzipalmarkt 10, 48143 Münster". Shown in the info box. New maps without position get their coordinates from the address on saving; later via the button "Determine coordinates from address".</source>
+                <target>Freitext, Zeilenumbrüche erlaubt, z. B. „Prinzipalmarkt 10, 48143 Münster“. Wird in der Infobox angezeigt. Neue Karten ohne Position erhalten ihre Koordinaten beim Speichern aus der Adresse; später über den Button „Koordinaten aus Adresse ermitteln“.</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_title">
+                <source>Popup title</source>
+                <target>Popup-Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_title.description">
+                <source>Shown in bold. Empty: the title of the map is used.</source>
+                <target>Wird fett angezeigt. Leer: Der Titel der Karte wird verwendet.</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_text">
+                <source>Popup information</source>
+                <target>Popup-Informationen</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_text.description">
+                <source>Optional, shown below the address – e.g. opening hours, holidays, links.</source>
+                <target>Optional, wird unter der Adresse angezeigt – z. B. Öffnungszeiten, Urlaub, Links.</target>
+            </trans-unit>
+            <trans-unit id="message.title">
+                <source>OpenStreetMap</source>
+                <target>OpenStreetMap</target>
+            </trans-unit>
+            <trans-unit id="message.geocode.success">
+                <source>Coordinates determined from the address: %s</source>
+                <target>Koordinaten aus der Adresse ermittelt: %s</target>
+            </trans-unit>
+            <trans-unit id="message.geocode.notFound">
+                <source>The address "%s" could not be found. Please check the address or enter latitude and longitude manually.</source>
+                <target>Die Adresse „%s“ wurde nicht gefunden. Bitte die Adresse prüfen oder Breiten- und Längengrad manuell eintragen.</target>
+            </trans-unit>
+            <trans-unit id="message.noPosition">
+                <source>The map has no position yet. Please enter an address or latitude and longitude.</source>
+                <target>Die Karte hat noch keine Position. Bitte eine Adresse oder Breiten- und Längengrad eintragen.</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state">
+                <source>Info box</source>
+                <target>Infobox</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state.description">
+                <source>Initial state on the map. Visitors open and close the info box by clicking the pin (or the × in the box).</source>
+                <target>Startzustand auf der Karte. Besucher öffnen und schließen die Infobox mit einem Klick auf die Stecknadel (oder das × in der Box).</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state.open">
+                <source>Open</source>
+                <target>Geöffnet</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state.closed">
+                <source>Closed (opens on click)</source>
+                <target>Geschlossen (öffnet per Klick)</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state.none">
+                <source>No info box</source>
+                <target>Keine Infobox</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.location_picker">
+                <source>Position on the map</source>
+                <target>Position auf der Karte</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.location_picker.description">
+                <source>Drag the pin to correct the position – e.g. to the entrance; the button places it at the address again. Zooming this map (+/−, mouse wheel after a click) sets the zoom level of the map. Everything is saved with the record.</source>
+                <target>Stecknadel verschieben, um die Position zu korrigieren – z. B. auf den Eingang; der Button setzt sie wieder auf die Adresse. Zoomen dieser Karte (+/−, Mausrad nach einem Klick) legt die Zoomstufe der Karte fest. Gespeichert wird alles mit dem Datensatz.</target>
+            </trans-unit>
+            <trans-unit id="picker.noPosition">
+                <source>No position yet: enter an address and save, or click into the map to set the pin.</source>
+                <target>Noch keine Position: Adresse eintragen und speichern, oder in die Karte klicken, um die Stecknadel zu setzen.</target>
+            </trans-unit>
+            <trans-unit id="picker.geocode">
+                <source>Determine coordinates from address</source>
+                <target>Koordinaten aus Adresse ermitteln</target>
+            </trans-unit>
+            <trans-unit id="picker.addressEmpty">
+                <source>Please enter an address first.</source>
+                <target>Bitte zuerst eine Adresse eintragen.</target>
+            </trans-unit>
+            <trans-unit id="picker.requestFailed">
+                <source>The coordinates could not be determined. Please try again later.</source>
+                <target>Die Koordinaten konnten nicht ermittelt werden. Bitte später erneut versuchen.</target>
+            </trans-unit>
+            <trans-unit id="message.addressChanged">
+                <source>The address has changed, the position of the pin was kept. To place the pin at the new address, use "Determine coordinates from address" and save again.</source>
+                <target>Die Adresse wurde geändert, die Position der Stecknadel blieb erhalten. Um die Stecknadel an die neue Adresse zu setzen, „Koordinaten aus Adresse ermitteln“ klicken und erneut speichern.</target>
+            </trans-unit>
+            <trans-unit id="picker.zoom">
+                <source>Zoom level: %s</source>
+                <target>Zoomstufe: %s</target>
+            </trans-unit>
+            <trans-unit id="picker.help">
+                <source>Adjust the zoom level here and fine-tune the position of the marker if necessary.</source>
+                <target>Passen Sie hier die Zoomstufe an und justieren Sie ggf. den Marker nach.</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.height.description">
+                <source>The map is always as wide as the column it is placed in. On small screens the height is limited to 70% of the screen height.</source>
+                <target>Die Karte ist immer so breit wie die Spalte, in der sie steht. Auf kleinen Bildschirmen wird die Höhe auf 70 % der Bildschirmhöhe begrenzt.</target>
+            </trans-unit>
+            <trans-unit id="flexform.layer.description">
+                <source>Preview images: © OpenStreetMap contributors; map styles © OpenStreetMap Germany, memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</source>
+                <target>Vorschaubilder: © OpenStreetMap-Mitwirkende; Kartendarstellungen © OpenStreetMap Deutschland, memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</target>
+            </trans-unit>
+            <trans-unit id="flexform.layer.osmde">
+                <source>OpenStreetMap Germany (German labels)</source>
+                <target>OpenStreetMap Deutschland (deutsche Beschriftung)</target>
+            </trans-unit>
+            <trans-unit id="flexform.layer.oepnv">
+                <source>Public transport map (bus and rail lines, stops)</source>
+                <target>ÖPNV-Karte (Bus- und Bahnlinien, Haltestellen)</target>
+            </trans-unit>
+            <trans-unit id="flexform.layer.hot">
+                <source>Humanitarian (pale, calm background)</source>
+                <target>Humanitarian (blass, ruhiger Hintergrund)</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.marker_color">
+                <source>Pin colour</source>
+                <target>Farbe der Stecknadel</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.marker_color.description">
+                <source>Colour of the default pin; the outline is darkened automatically. No effect with a custom marker image.</source>
+                <target>Farbe der Standard-Stecknadel; der Rand wird automatisch dunkler. Wirkt nicht bei eigener Markergrafik.</target>
+            </trans-unit>
+            <trans-unit id="preview.map">
+                <source>Map</source>
+                <target>Karte</target>
+            </trans-unit>
+            <trans-unit id="preview.view">
+                <source>View</source>
+                <target>Ansicht</target>
+            </trans-unit>
+            <trans-unit id="preview.view.static">
+                <source>Static image</source>
+                <target>Statisches Bild</target>
+            </trans-unit>
+            <trans-unit id="preview.view.dynamic">
+                <source>Interactive map</source>
+                <target>Interaktive Karte</target>
+            </trans-unit>
+            <trans-unit id="preview.layer">
+                <source>Map layer</source>
+                <target>Kartenstil</target>
+            </trans-unit>
+            <trans-unit id="preview.noMap">
+                <source>No map selected.</source>
+                <target>Keine Karte ausgewählt.</target>
+            </trans-unit>
+            <trans-unit id="preview.notFound">
+                <source>The selected map does not exist (deleted?).</source>
+                <target>Die gewählte Karte existiert nicht (gelöscht?).</target>
+            </trans-unit>
+            <trans-unit id="preview.hidden">
+                <source>The map is hidden and not shown on the website.</source>
+                <target>Die Karte ist verborgen und erscheint nicht auf der Website.</target>
+            </trans-unit>
+            <trans-unit id="preview.noPosition">
+                <source>The map has no position yet.</source>
+                <target>Die Karte hat noch keine Position.</target>
+            </trans-unit>
+            <trans-unit id="preview.renderError">
+                <source>The preview image could not be rendered (tile server not reachable?).</source>
+                <target>Das Vorschaubild konnte nicht erzeugt werden (Kachel-Server nicht erreichbar?).</target>
+            </trans-unit>
+            <trans-unit id="preview.typoScriptMissing">
+                <source>The static TypoScript &quot;OpenStreetMap&quot; is not included for this page. The map still works with default settings and its CSS, but lib.sicOsm.map and the TypoScript settings are missing. Please add it to the TypoScript template of the site (Includes).</source>
+                <target>Das statische TypoScript „OpenStreetMap“ ist für diese Seite nicht eingebunden. Die Karte funktioniert mit Standardwerten und ihrem CSS, aber lib.sicOsm.map und die TypoScript-Einstellungen fehlen. Bitte im TypoScript-Template der Website unter „Includes“ einbinden.</target>
+            </trans-unit>
+            <trans-unit id="flexform.view.click">
+                <source>Static image, interactive map on click (two-click solution: nothing is sent to third parties before the click)</source>
+                <target>Statisches Bild, interaktive Karte auf Klick (Zwei-Klick-Lösung: vor dem Klick werden keine Daten an Dritte übertragen)</target>
+            </trans-unit>
+            <trans-unit id="preview.view.click">
+                <source>Static image, interactive on click</source>
+                <target>Statisches Bild, interaktiv auf Klick</target>
+            </trans-unit>
+            <trans-unit id="palette.appearance">
+                <source>Appearance</source>
+                <target>Darstellung</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.grayscale">
+                <source>Map in grayscale</source>
+                <target>Karte in Graustufen</target>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.grayscale.description">
+                <source>Subdued map without colours – pin, info box and controls stay coloured. Applies to all views. Requires the default CSS (includeDefaultCss).</source>
+                <target>Dezente Karte ohne Farben – Stecknadel, Infobox und Bedienelemente bleiben farbig. Gilt für alle Ansichten. Setzt das Standard-CSS voraus (includeDefaultCss).</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

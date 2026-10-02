@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    Included unless switched off explicitly (includeDefaultCss = 0) – also without the static TypoScript,
+    otherwise pin and info box would not be positioned
+</f:comment>
+<f:if condition="{settings.includeDefaultCss} != '0'">
+    <f:asset.css identifier="sic-osm" href="EXT:sic_osm/Resources/Public/Css/sic_osm.css" />
+</f:if>
+
+<f:comment>{map.position} calls Map::hasPosition()</f:comment>
+<f:if condition="{map}">
+    <f:then>
+        <f:if condition="{map.position}">
+            <f:then>
+                <f:if condition="{layout.click}">
+                    <f:then>
+                        <f:render partial="Map/ClickToLoad" arguments="{map: map, staticMap: staticMap, dynamicConfig: dynamicConfig, marker: marker, layout: layout, data: data, attributionFallback: staticAttributionFallback}" />
+                    </f:then>
+                    <f:else if="{dynamicConfig}">
+                        <f:render partial="Map/Dynamic" arguments="{map: map, dynamicConfig: dynamicConfig, marker: marker, layout: layout, data: data}" />
+                    </f:else>
+                    <f:else if="{staticMap}">
+                        <f:render partial="Map/Static" arguments="{map: map, staticMap: staticMap, marker: marker, layout: layout, data: data, attributionFallback: staticAttributionFallback}" />
+                    </f:else>
+                    <f:else>
+                        <p class="sic-osm sic-osm--error"><f:translate key="map.renderError" /></p>
+                    </f:else>
+                </f:if>
+            </f:then>
+            <f:else>
+                <p class="sic-osm sic-osm--error"><f:translate key="map.noPosition" /></p>
+            </f:else>
+        </f:if>
+    </f:then>
+    <f:else>
+        <p class="sic-osm sic-osm--empty"><f:translate key="map.notFound" /></p>
+    </f:else>
+</f:if>
+
+</html>

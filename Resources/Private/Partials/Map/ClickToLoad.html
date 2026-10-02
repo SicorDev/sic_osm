@@ -1,0 +1,67 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    Two-click solution: the static map is shown first – nothing is loaded from third parties.
+    The button loads Leaflet (from this extension) and replaces the image by the interactive map at the same
+    place; only then the visitor's browser requests tiles from the tile server named in the hint.
+    "Remember for this visit" stores the choice in sessionStorage (no cookie), further two-click maps then
+    open interactively right away. Without JavaScript the static map stays fully usable (the bar is hidden).
+    Leaflet is loaded on demand by sic_osm.js – the URLs are passed in data attributes.
+</f:comment>
+<f:asset.script identifier="sic-osm" src="EXT:sic_osm/Resources/Public/JavaScript/sic_osm.js" defer="1" />
+
+<figure class="sic-osm sic-osm--static sic-osm--click{f:if(condition: layout.focusLow, then: ' sic-osm--focus-low')}{f:if(condition: map.grayscale, then: ' sic-osm--grayscale')}"
+        style="--sic-osm-height: {layout.height}px"
+        data-sic-osm-uid="{data.uid}"
+        data-sic-osm-click="{dynamicConfig}"
+        data-sic-osm-label="{f:translate(key: 'map.alt', arguments: {0: map.title})}"
+        data-sic-osm-leaflet-js="{f:uri.resource(path: 'EXT:sic_osm/Resources/Public/Contrib/leaflet/leaflet.js')}"
+        data-sic-osm-leaflet-css="{f:uri.resource(path: 'EXT:sic_osm/Resources/Public/Contrib/leaflet/leaflet.css')}">
+    <div class="sic-osm__canvas">
+        <f:if condition="{staticMap}">
+            <f:then>
+                <img class="sic-osm__image"
+                     src="{staticMap.url}"
+                     width="{staticMap.width}"
+                     height="{staticMap.height}"
+                     alt="{f:translate(key: 'map.alt', arguments: {0: map.title})}"
+                     loading="lazy"
+                     decoding="async" />
+                <f:if condition="{marker}">
+                    <f:render partial="Map/Marker" arguments="{map: map, marker: marker, layout: layout}" />
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:comment>Static image could not be rendered: the interactive map can still be loaded</f:comment>
+                <p class="sic-osm__placeholder"><f:translate key="map.renderError" /></p>
+            </f:else>
+        </f:if>
+    </div>
+    <f:if condition="{marker}">
+        <f:comment>Marker of the interactive map, same markup (see Map/Dynamic)</f:comment>
+        <template class="sic-osm__marker-template">
+            <f:render partial="Map/Marker" arguments="{map: map, marker: marker, layout: layout}" />
+        </template>
+    </f:if>
+    <div class="sic-osm__activate" hidden>
+        <button type="button" class="sic-osm__activate-button"><f:translate key="map.activate" /></button>
+        <span class="sic-osm__activate-note"><f:translate key="map.activate.note" arguments="{0: layout.tileHost}" /></span>
+        <label class="sic-osm__activate-remember">
+            <input type="checkbox" class="sic-osm__activate-remember-input" />
+            <f:translate key="map.activate.remember" />
+        </label>
+    </div>
+    <f:comment>{map.popup} (Map::hasPopup()) implies a visible marker</f:comment>
+    <f:if condition="{map.popup}">
+        <f:render partial="Map/Popup" arguments="{map: map, layout: layout, below: 1}" />
+    </f:if>
+    <f:comment>Attribution of the static image; replaced by Leaflet's attribution after activation</f:comment>
+    <figcaption class="sic-osm__attribution">{f:translate(key: 'map.attribution.osm', default: attributionFallback) -> f:format.raw()}</figcaption>
+    <noscript>
+        <p class="sic-osm__noscript">
+            <a href="https://www.openstreetmap.org/?mlat={map.latitude}&amp;mlon={map.longitude}#map={map.zoom}/{map.latitude}/{map.longitude}" target="_blank" rel="noopener noreferrer"><f:translate key="map.openOsm" /></a>
+        </p>
+    </noscript>
+</figure>
+
+</html>

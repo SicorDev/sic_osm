@@ -1,0 +1,352 @@
+/* sic_osm – default styles; disable via plugin.tx_sicosm.settings.includeDefaultCss = 0 */
+
+/*
+ * Both views: as wide as the container, height from --sic-osm-height (inline style, map record),
+ * at most 70% of the viewport height on small screens. The figure is a size container, so the info box
+ * can move below the map on very narrow maps (container query).
+ */
+.sic-osm--static,
+.sic-osm--dynamic {
+    --sic-osm-popup-background: #fff;
+    --sic-osm-popup-color: #333;
+    --sic-osm-button-background: #0078a8;
+    --sic-osm-button-color: #fff;
+    --sic-osm-map-height: min(var(--sic-osm-height, 450px), 70vh);
+    container: sic-osm / inline-size;
+    display: block;
+    width: 100%;
+    margin: 0 0 1rem;
+}
+
+/* Interactive map; isolation keeps Leaflet's z-indexes inside */
+.sic-osm__map {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    width: 100%;
+    height: var(--sic-osm-map-height);
+    background: #f2efe9;
+}
+
+/* Info box and controls use the font family of the site; Leaflet's font sizes stay */
+.sic-osm .sic-osm__map.leaflet-container {
+    font-family: inherit;
+}
+
+.sic-osm__marker-icon {
+    background: none;
+    border: 0;
+}
+
+.sic-osm__noscript {
+    padding: 1rem;
+    line-height: 1.4;
+}
+
+/* Static map: the wide image is cropped to the container (map keeps its scale); object-position keeps
+   the coordinate at the horizontal centre and at 50% (or 70% with info box) of the height */
+.sic-osm__canvas {
+    position: relative;
+    height: var(--sic-osm-map-height);
+    overflow: hidden;
+    line-height: 0;
+    background: #f2efe9;
+}
+
+.sic-osm .sic-osm__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.sic-osm--focus-low .sic-osm__image {
+    object-position: 50% 70%;
+}
+
+/*
+ * Pin wrapper: its bottom centre (pin tip) sits on the coordinate.
+ * Static view: the coordinate is the horizontal centre and 50% (or 70% with info box) of the height.
+ * Interactive view: the 0×0 Leaflet icon sits on the coordinate.
+ */
+.sic-osm .sic-osm__marker {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -100%);
+    pointer-events: none;
+}
+
+.sic-osm--focus-low .sic-osm__canvas > .sic-osm__marker {
+    top: 70%;
+}
+
+.sic-osm .sic-osm__marker-icon .sic-osm__marker {
+    left: 0;
+    top: 0;
+}
+
+/*
+ * Resets: global img rules of sitepackages (e.g. width: 100%, max-width: 100%, margins)
+ * must not affect the pin. width/height: auto → the width/height attributes apply.
+ */
+.sic-osm .sic-osm__marker-image {
+    display: block;
+    flex: none;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+/*
+ * Map in grayscale: only the map itself – static image or Leaflet's tile layer. Pin, info box,
+ * controls and (later) the track stay coloured. The static image itself is not changed (same file, same hash).
+ */
+.sic-osm--grayscale .sic-osm__image,
+.sic-osm--grayscale .leaflet-tile-pane {
+    filter: grayscale(100%);
+}
+
+/* Default pin (inline SVG): fixed size, independent of global svg rules */
+.sic-osm .sic-osm__pin {
+    width: 32px;
+    height: 48px;
+    overflow: visible;
+}
+
+/* Pin as toggle button for the info box */
+.sic-osm .sic-osm__marker-button {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* The checkbox holding the open/closed state: invisible, but reachable by keyboard */
+.sic-osm .sic-osm__popup-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.sic-osm .sic-osm__popup-toggle:focus-visible ~ .sic-osm__marker-button {
+    outline: 2px solid #0078a8;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.sic-osm .sic-osm__popup-toggle:not(:checked) ~ .sic-osm__popup {
+    display: none;
+}
+
+/*
+ * Info box in the look of the Leaflet popup (as used by EXT:cbgooglemaps):
+ * white box with rounded corners, shadow, tip pointing to the pin, close button top right.
+ */
+.sic-osm .sic-osm__popup {
+    position: relative;
+    box-sizing: border-box;
+    width: max-content;
+    min-width: 50px;
+    max-width: min(300px, 90cqw);
+    margin: 0 0 12px;
+    background: var(--sic-osm-popup-background);
+    color: var(--sic-osm-popup-color);
+    border-radius: 12px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    text-align: left;
+    white-space: normal;
+    pointer-events: auto;
+}
+
+/* Space above the pin: 70% of the map height minus pin and tip; longer content scrolls */
+.sic-osm .sic-osm__popup-content {
+    max-height: max(4rem, calc(var(--sic-osm-map-height) * 0.7 - 5rem));
+    overflow: auto;
+    margin: 13px 24px 13px 20px;
+}
+
+.sic-osm .sic-osm__popup-tip {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 40px;
+    height: 20px;
+    margin: -1px 0 0 -20px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.sic-osm .sic-osm__popup-tip::before {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 17px;
+    margin: -10px auto 0;
+    padding: 1px;
+    background: var(--sic-osm-popup-background);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+    transform: rotate(45deg);
+}
+
+.sic-osm .sic-osm__popup-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    font: 16px/24px Tahoma, Verdana, sans-serif;
+    color: #757575;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sic-osm .sic-osm__popup-close:hover {
+    color: #585858;
+}
+
+.sic-osm .sic-osm__popup-title {
+    display: block;
+    font-weight: bold;
+}
+
+.sic-osm .sic-osm__popup-address {
+    margin: 0.25rem 0 0;
+    font-style: normal;
+}
+
+.sic-osm .sic-osm__popup-info {
+    margin-top: 0.5rem;
+}
+
+.sic-osm .sic-osm__popup-info > :first-child {
+    margin-top: 0;
+}
+
+.sic-osm .sic-osm__popup-info > :last-child {
+    margin-bottom: 0;
+}
+
+/* Copy of the info box below the map – only used on very narrow maps, always visible */
+.sic-osm .sic-osm__popup--below {
+    display: none;
+}
+
+@container sic-osm (max-width: 360px) {
+    .sic-osm .sic-osm__marker .sic-osm__popup {
+        display: none;
+    }
+
+    .sic-osm .sic-osm__marker-button {
+        cursor: default;
+    }
+
+    .sic-osm .sic-osm__popup--below {
+        display: block;
+        width: auto;
+        max-width: none;
+        margin: 0.5rem 0 0;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .sic-osm .sic-osm__popup--below .sic-osm__popup-content {
+        max-height: none;
+        margin: 13px 20px;
+    }
+}
+
+.sic-osm__attribution {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+/*
+ * Two-click map: bar below the static image with the button that loads the interactive map.
+ * Below the image (not on it), so it never covers pin or info box, also on low maps.
+ */
+.sic-osm .sic-osm__activate {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin: 0.5rem 0 0;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.sic-osm .sic-osm__activate[hidden] {
+    display: none;
+}
+
+.sic-osm .sic-osm__activate-button {
+    flex: none;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 4px;
+    background: var(--sic-osm-button-background);
+    color: var(--sic-osm-button-color);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sic-osm .sic-osm__activate-button:focus-visible {
+    outline: 2px solid var(--sic-osm-button-background);
+    outline-offset: 2px;
+}
+
+.sic-osm .sic-osm__activate-button:disabled {
+    cursor: progress;
+    opacity: 0.7;
+}
+
+.sic-osm .sic-osm__activate-note {
+    flex: 1 1 16rem;
+}
+
+.sic-osm .sic-osm__activate-remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Static image not available: text in the map area, the interactive map can still be loaded */
+.sic-osm .sic-osm__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.4;
+    text-align: center;
+}

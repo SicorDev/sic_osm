@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  SICOR\SicOsm\:
+    resource: '../Classes/*'
+
+  SICOR\SicOsm\Controller\MapController:
+    public: true
+
+  # Backend AJAX route "sic_osm_geocode"
+  SICOR\SicOsm\Controller\Backend\GeocodeAjaxController:
+    public: true
+
+  # Instantiated by DataHandler via GeneralUtility::makeInstance()
+  SICOR\SicOsm\Hooks\DataHandlerHook:
+    public: true

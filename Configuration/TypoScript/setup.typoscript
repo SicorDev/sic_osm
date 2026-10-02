@@ -1,0 +1,30 @@
+plugin.tx_sicosm {
+    view {
+        templateRootPaths {
+            0 = EXT:sic_osm/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            0 = EXT:sic_osm/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            0 = EXT:sic_osm/Resources/Private/Layouts/
+        }
+    }
+    settings {
+        view = {$plugin.tx_sicosm.settings.view}
+        layer = {$plugin.tx_sicosm.settings.layer}
+        includeDefaultCss = {$plugin.tx_sicosm.settings.includeDefaultCss}
+    }
+    # Empty FlexForm values fall back to the TypoScript defaults above
+    ignoreFlexFormSettingsIfEmpty = view,layer
+}
+
+# Map without content element, e.g. in the footer of a sitepackage template:
+#   <f:cObject typoscriptObjectPath="lib.sicOsm.map" data="{map: 3}" />
+#   <f:cObject typoscriptObjectPath="lib.sicOsm.map" data="{map: 3, view: 'dynamic', layer: 'cyclosm'}" />
+# "map" is the uid of the map record; "view" and "layer" are optional (defaults: TypoScript settings above)
+lib.sicOsm.map = EXTBASEPLUGIN
+lib.sicOsm.map {
+    extensionName = SicOsm
+    pluginName = Map
+}

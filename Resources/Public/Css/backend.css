@@ -1,0 +1,151 @@
+/*
+ * sic_osm – backend styles. Registered as global backend stylesheet ($GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets'],
+ * ext_localconf.php), because the page module preview and the FlexForm of the content element need them too.
+ * All rules are scoped to sic_osm classes or to the layer preview images.
+ */
+
+/* Backend map of the map record (FormEngine element "sicOsmLocationPicker") */
+.sic-osm-picker {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    width: 100%;
+    max-width: 800px;
+    height: 320px;
+    border: 1px solid var(--typo3-input-border-color, #bbb);
+    border-radius: var(--typo3-input-border-radius, 4px);
+    background: #f2efe9;
+}
+
+.sic-osm-picker .leaflet-marker-icon {
+    cursor: grab;
+}
+
+/* Pin (inline SVG as Leaflet divIcon, coloured like the record) */
+.sic-osm-picker .sic-osm-picker__marker {
+    background: none;
+    border: 0;
+}
+
+.sic-osm-picker .sic-osm-picker__marker svg {
+    display: block;
+}
+
+.sic-osm-picker .sic-osm-picker__zoom-info:not(:empty) {
+    padding: 2px 8px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sic-osm-picker__actions {
+    margin: 0 0 0.5rem;
+}
+
+.sic-osm-picker__hint {
+    margin: 0.5rem 0 0;
+}
+
+/* FlexForm: map layer with preview images. Images are 160 × 100 px; next to the select only a small version */
+.form-wizard-icon-list-item img[src*="Images/Layers/"] {
+    display: block;
+    width: 160px;
+    height: 100px;
+    max-width: none;
+    max-height: none;
+    border-radius: 2px;
+}
+
+.input-group-icon img[src*="Images/Layers/"] {
+    width: 48px;
+    height: 30px;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Page module preview of the content element */
+.sic-osm-preview__canvas {
+    position: relative;
+    max-width: 400px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 0 0.5rem;
+    border-radius: 4px;
+    background: #f2efe9;
+}
+
+/*
+ * Image rules of the page module must not apply: the core sets .t3-page-ce-body img { height: auto; max-width: 100% },
+ * other extensions even use !important, e.g. EXT:dce: .t3-page-ce .t3-page-ce-body-inner img { max-height: 50px !important;
+ * width: auto !important; background-color: #eaeaea !important }. Only !important with a more specific selector
+ * (three classes) wins against that – limited to the size and background of the preview images.
+ */
+.sic-osm-preview .sic-osm-preview__canvas .sic-osm-preview__image {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    background-color: transparent !important;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.sic-osm-preview .sic-osm-preview__canvas--focus-low .sic-osm-preview__image {
+    object-position: 50% 70%;
+}
+
+.sic-osm-preview .sic-osm-preview__canvas--grayscale .sic-osm-preview__image {
+    filter: grayscale(100%);
+}
+
+/* Pin tip on the coordinate: horizontal centre, 50% (or 70% with info box) of the height; shown smaller */
+.sic-osm-preview__marker {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    line-height: 0;
+    transform: translate(-50%, -100%);
+}
+
+.sic-osm-preview__canvas--focus-low .sic-osm-preview__marker {
+    top: 70%;
+}
+
+.sic-osm-preview__pin {
+    width: 20px;
+    height: 30px;
+}
+
+.sic-osm-preview .sic-osm-preview__marker .sic-osm-preview__marker-image {
+    width: auto !important;
+    height: auto !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
+    background-color: transparent !important;
+}
+
+.sic-osm-preview__message {
+    margin: 0 0 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.sic-osm-preview__details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 0.75rem;
+    margin: 0;
+}
+
+.sic-osm-preview__details dt {
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+.sic-osm-preview__details dd {
+    margin: 0;
+}

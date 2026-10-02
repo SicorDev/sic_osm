@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="Messages" date="2026-09-24" product-name="sic_osm">
+        <header/>
+        <body>
+            <!-- Plugin -->
+            <trans-unit id="plugin.map.title">
+                <source>OpenStreetMap</source>
+            </trans-unit>
+            <trans-unit id="plugin.map.description">
+                <source>Shows a map as a static image (no data sent to third parties) or as an interactive map.</source>
+            </trans-unit>
+            <!-- FlexForm -->
+            <trans-unit id="flexform.map">
+                <source>Map</source>
+            </trans-unit>
+            <trans-unit id="flexform.map.choose">
+                <source>– Please choose a map –</source>
+            </trans-unit>
+            <trans-unit id="flexform.view">
+                <source>View</source>
+            </trans-unit>
+            <trans-unit id="flexform.view.static">
+                <source>Static image (no data sent to third parties)</source>
+            </trans-unit>
+            <trans-unit id="flexform.view.dynamic">
+                <source>Interactive map (map tiles are loaded from external servers)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layer">
+                <source>Map layer</source>
+            </trans-unit>
+            <trans-unit id="flexform.layer.osm">
+                <source>OpenStreetMap Standard</source>
+            </trans-unit>
+            <trans-unit id="flexform.layer.opentopomap">
+                <source>OpenTopoMap (topographic, max. zoom 17)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layer.cyclosm">
+                <source>CyclOSM (cycling)</source>
+            </trans-unit>
+            <!-- Table tx_sicosm_domain_model_map -->
+            <trans-unit id="tx_sicosm_domain_model_map">
+                <source>Map</source>
+            </trans-unit>
+            <trans-unit id="tab.marker">
+                <source>Marker</source>
+            </trans-unit>
+            <trans-unit id="palette.position">
+                <source>Position</source>
+            </trans-unit>
+            <trans-unit id="palette.size">
+                <source>Size</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.title.description">
+                <source>Shown in the backend and used as alternative text of the map image.</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.latitude">
+                <source>Latitude</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.latitude.description">
+                <source>Decimal degrees between -90 and 90, e.g. 51.9621672</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.longitude">
+                <source>Longitude</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.longitude.description">
+                <source>Decimal degrees between -180 and 180, e.g. 7.6281483</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.height">
+                <source>Height (px)</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.image_format">
+                <source>Image format</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.image_format.description">
+                <source>Only for the static view. JPG is smaller, PNG is sharper.</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.show_marker">
+                <source>Show marker at map center</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.marker">
+                <source>Custom marker image</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.marker.description">
+                <source>Optional. Replaces the default pin; anchored at its bottom centre like the pin.</source>
+            </trans-unit>
+            <trans-unit id="palette.address">
+                <source>Address</source>
+            </trans-unit>
+            <trans-unit id="palette.popup">
+                <source>Popup</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.address">
+                <source>Address</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.address.description">
+                <source>Free text, line breaks allowed, e.g. "Prinzipalmarkt 10, 48143 Münster". Shown in the info box. New maps without position get their coordinates from the address on saving; later via the button "Determine coordinates from address".</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_title">
+                <source>Popup title</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_title.description">
+                <source>Shown in bold. Empty: the title of the map is used.</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_text">
+                <source>Popup information</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_text.description">
+                <source>Optional, shown below the address – e.g. opening hours, holidays, links.</source>
+            </trans-unit>
+            <trans-unit id="message.title">
+                <source>OpenStreetMap</source>
+            </trans-unit>
+            <trans-unit id="message.geocode.success">
+                <source>Coordinates determined from the address: %s</source>
+            </trans-unit>
+            <trans-unit id="message.geocode.notFound">
+                <source>The address "%s" could not be found. Please check the address or enter latitude and longitude manually.</source>
+            </trans-unit>
+            <trans-unit id="message.noPosition">
+                <source>The map has no position yet. Please enter an address or latitude and longitude.</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state">
+                <source>Info box</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state.description">
+                <source>Initial state on the map. Visitors open and close the info box by clicking the pin (or the × in the box).</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state.open">
+                <source>Open</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state.closed">
+                <source>Closed (opens on click)</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.popup_state.none">
+                <source>No info box</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.location_picker">
+                <source>Position on the map</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.location_picker.description">
+                <source>Drag the pin to correct the position – e.g. to the entrance; the button places it at the address again. Zooming this map (+/−, mouse wheel after a click) sets the zoom level of the map. Everything is saved with the record.</source>
+            </trans-unit>
+            <trans-unit id="picker.noPosition">
+                <source>No position yet: enter an address and save, or click into the map to set the pin.</source>
+            </trans-unit>
+            <trans-unit id="picker.geocode">
+                <source>Determine coordinates from address</source>
+            </trans-unit>
+            <trans-unit id="picker.addressEmpty">
+                <source>Please enter an address first.</source>
+            </trans-unit>
+            <trans-unit id="picker.requestFailed">
+                <source>The coordinates could not be determined. Please try again later.</source>
+            </trans-unit>
+            <trans-unit id="message.addressChanged">
+                <source>The address has changed, the position of the pin was kept. To place the pin at the new address, use "Determine coordinates from address" and save again.</source>
+            </trans-unit>
+            <trans-unit id="picker.zoom">
+                <source>Zoom level: %s</source>
+            </trans-unit>
+            <trans-unit id="picker.help">
+                <source>Adjust the zoom level here and fine-tune the position of the marker if necessary.</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.height.description">
+                <source>The map is always as wide as the column it is placed in. On small screens the height is limited to 70% of the screen height.</source>
+            </trans-unit>
+            <trans-unit id="flexform.layer.description">
+                <source>Preview images: © OpenStreetMap contributors; map styles © OpenStreetMap Germany, memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</source>
+            </trans-unit>
+            <trans-unit id="flexform.layer.osmde">
+                <source>OpenStreetMap Germany (German labels)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layer.oepnv">
+                <source>Public transport map (bus and rail lines, stops)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layer.hot">
+                <source>Humanitarian (pale, calm background)</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.marker_color">
+                <source>Pin colour</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.marker_color.description">
+                <source>Colour of the default pin; the outline is darkened automatically. No effect with a custom marker image.</source>
+            </trans-unit>
+            <trans-unit id="preview.map">
+                <source>Map</source>
+            </trans-unit>
+            <trans-unit id="preview.view">
+                <source>View</source>
+            </trans-unit>
+            <trans-unit id="preview.view.static">
+                <source>Static image</source>
+            </trans-unit>
+            <trans-unit id="preview.view.dynamic">
+                <source>Interactive map</source>
+            </trans-unit>
+            <trans-unit id="preview.layer">
+                <source>Map layer</source>
+            </trans-unit>
+            <trans-unit id="preview.noMap">
+                <source>No map selected.</source>
+            </trans-unit>
+            <trans-unit id="preview.notFound">
+                <source>The selected map does not exist (deleted?).</source>
+            </trans-unit>
+            <trans-unit id="preview.hidden">
+                <source>The map is hidden and not shown on the website.</source>
+            </trans-unit>
+            <trans-unit id="preview.noPosition">
+                <source>The map has no position yet.</source>
+            </trans-unit>
+            <trans-unit id="preview.renderError">
+                <source>The preview image could not be rendered (tile server not reachable?).</source>
+            </trans-unit>
+            <trans-unit id="preview.typoScriptMissing">
+                <source>The static TypoScript &quot;OpenStreetMap&quot; is not included for this page. The map still works with default settings and its CSS, but lib.sicOsm.map and the TypoScript settings are missing. Please add it to the TypoScript template of the site (Includes).</source>
+            </trans-unit>
+            <trans-unit id="flexform.view.click">
+                <source>Static image, interactive map on click (two-click solution: nothing is sent to third parties before the click)</source>
+            </trans-unit>
+            <trans-unit id="preview.view.click">
+                <source>Static image, interactive on click</source>
+            </trans-unit>
+            <trans-unit id="palette.appearance">
+                <source>Appearance</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.grayscale">
+                <source>Map in grayscale</source>
+            </trans-unit>
+            <trans-unit id="tx_sicosm_domain_model_map.grayscale.description">
+                <source>Subdued map without colours – pin, info box and controls stay coloured. Applies to all views. Requires the default CSS (includeDefaultCss).</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

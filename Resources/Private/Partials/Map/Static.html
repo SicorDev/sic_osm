@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    The map is as wide as its container and has the configured height (at most 70% of the viewport).
+    The image is rendered wider (imageWidth) and cropped with object-fit: cover, so the map keeps its
+    scale on every device. object-position (50% / 50% or 70%) keeps the coordinate exactly where the
+    marker wrapper is placed by CSS.
+</f:comment>
+<figure class="sic-osm sic-osm--static{f:if(condition: layout.focusLow, then: ' sic-osm--focus-low')}{f:if(condition: map.grayscale, then: ' sic-osm--grayscale')}"
+        style="--sic-osm-height: {layout.height}px"
+        data-sic-osm-uid="{data.uid}">
+    <div class="sic-osm__canvas">
+        <img class="sic-osm__image"
+             src="{staticMap.url}"
+             width="{staticMap.width}"
+             height="{staticMap.height}"
+             alt="{f:translate(key: 'map.alt', arguments: {0: map.title})}"
+             loading="lazy"
+             decoding="async" />
+        <f:if condition="{marker}">
+            <f:render partial="Map/Marker" arguments="{map: map, marker: marker, layout: layout}" />
+        </f:if>
+    </div>
+    <f:comment>{map.popup} (Map::hasPopup()) implies a visible marker</f:comment>
+    <f:if condition="{map.popup}">
+        <f:render partial="Map/Popup" arguments="{map: map, layout: layout, below: 1}" />
+    </f:if>
+    <figcaption class="sic-osm__attribution">{f:translate(key: 'map.attribution.osm', default: attributionFallback) -> f:format.raw()}</figcaption>
+</figure>
+
+</html>

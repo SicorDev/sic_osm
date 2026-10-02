@@ -1,0 +1,10 @@
+plugin.tx_sicosm {
+    settings {
+        # cat=plugin.tx_sicosm/basic; type=options[static,click,dynamic]; label=Default view (used if not set in the content element)
+        view = static
+        # cat=plugin.tx_sicosm/basic; type=options[osm,osmde,oepnv,hot,opentopomap,cyclosm]; label=Default map layer of the interactive map (views click and dynamic)
+        layer = osm
+        # cat=plugin.tx_sicosm/basic; type=boolean; label=Include default CSS
+        includeDefaultCss = 1
+    }
+}

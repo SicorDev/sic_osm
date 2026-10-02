@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    Pin, shared by both views. The wrapper is anchored with its bottom centre (pin tip) on the coordinate.
+    Info box toggle without JavaScript: a visually hidden checkbox holds the state, the pin and the close
+    button are label elements for it, CSS hides the box when unchecked. The checkbox stays keyboard-focusable.
+    {map.popup} calls Map::hasPopup(), {map.popupOpen} Map::isPopupOpen().
+</f:comment>
+<div class="sic-osm__marker{f:if(condition: map.popup, then: ' sic-osm__marker--popup')}">
+    <f:if condition="{map.popup}">
+        <f:then>
+            <f:if condition="{map.popupOpen}">
+                <f:then>
+                    <input type="checkbox" class="sic-osm__popup-toggle" id="{layout.domId}-popup" checked="checked" aria-label="{f:translate(key: 'map.popup.toggle')}" />
+                </f:then>
+                <f:else>
+                    <input type="checkbox" class="sic-osm__popup-toggle" id="{layout.domId}-popup" aria-label="{f:translate(key: 'map.popup.toggle')}" />
+                </f:else>
+            </f:if>
+            <f:render partial="Map/Popup" arguments="{map: map, layout: layout}" />
+            <label class="sic-osm__marker-button" for="{layout.domId}-popup" title="{f:translate(key: 'map.popup.toggle')}">
+                <f:render section="Image" arguments="{marker: marker}" />
+            </label>
+        </f:then>
+        <f:else>
+            <f:render section="Image" arguments="{marker: marker}" />
+        </f:else>
+    </f:if>
+</div>
+
+<f:section name="Image">
+    <f:comment>
+        Default pin: inline SVG in the colour of the record (built by Pin::svg() from a validated colour).
+        Custom SVG markers may have no stored dimensions – then the natural size is used.
+    </f:comment>
+    <f:if condition="{marker.svg}">
+        <f:then>{marker.svg -> f:format.raw()}</f:then>
+        <f:else if="{marker.width}">
+            <img class="sic-osm__marker-image" src="{marker.url}" width="{marker.width}" height="{marker.height}" alt="" aria-hidden="true" />
+        </f:else>
+        <f:else>
+            <img class="sic-osm__marker-image" src="{marker.url}" alt="" aria-hidden="true" />
+        </f:else>
+    </f:if>
+</f:section>
+
+</html>
