@@ -10,7 +10,6 @@ namespace SICOR\SicOsm\Enum;
 enum Layer: string
 {
     case Osm = 'osm';
-    case OsmDe = 'osmde';
     case Oepnv = 'oepnv';
     case Hot = 'hot';
     case OpenTopoMap = 'opentopomap';
@@ -28,7 +27,6 @@ enum Layer: string
     {
         return match ($this) {
             self::Osm => 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            self::OsmDe => 'https://tile.openstreetmap.de/{z}/{x}/{y}.png',
             // Free use incl. commercial with attribution; high-traffic sites must host it themselves (memomaps.de FAQ)
             self::Oepnv => 'https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',
             self::Hot => 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
@@ -48,7 +46,7 @@ enum Layer: string
     public function subdomains(): string
     {
         return match ($this) {
-            self::Osm, self::OsmDe, self::Oepnv => '',
+            self::Osm, self::Oepnv => '',
             self::Hot, self::OpenTopoMap, self::CyclOsm => 'abc',
         };
     }
@@ -56,7 +54,7 @@ enum Layer: string
     public function maxZoom(): int
     {
         return match ($this) {
-            self::Osm, self::OsmDe, self::Hot => 19,
+            self::Osm, self::Hot => 19,
             self::Oepnv => 18,
             self::OpenTopoMap => 17,
             self::CyclOsm => 20,
@@ -81,7 +79,6 @@ enum Layer: string
         $osmFr = '<a href="https://openstreetmap.fr" target="_blank" rel="noopener noreferrer">OpenStreetMap France</a>';
         return match ($this) {
             self::Osm => $osm,
-            self::OsmDe => $osm . ' | Map style: <a href="https://www.openstreetmap.de" target="_blank" rel="noopener noreferrer">OpenStreetMap Germany</a> (FOSSGIS e.V.)',
             self::Oepnv => 'Map <a href="https://memomaps.de" target="_blank" rel="noopener noreferrer">memomaps.de</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA</a>, map data ' . $osm . ' (<a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener noreferrer">ODbL</a>)',
             self::Hot => $osm . ' | Map style: <a href="https://www.hotosm.org" target="_blank" rel="noopener noreferrer">Humanitarian OpenStreetMap Team</a>, hosted by ' . $osmFr,
             self::OpenTopoMap => 'Map data: ' . $osm . ', SRTM | Map style: © <a href="https://opentopomap.org" target="_blank" rel="noopener noreferrer">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA</a>)',

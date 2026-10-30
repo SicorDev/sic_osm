@@ -63,26 +63,21 @@
                             <icon>EXT:sic_osm/Resources/Public/Images/Layers/osm.png</icon>
                         </numIndex>
                         <numIndex index="1">
-                            <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.osmde</label>
-                            <value>osmde</value>
-                            <icon>EXT:sic_osm/Resources/Public/Images/Layers/osmde.png</icon>
-                        </numIndex>
-                        <numIndex index="2">
                             <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.oepnv</label>
                             <value>oepnv</value>
                             <icon>EXT:sic_osm/Resources/Public/Images/Layers/oepnv.png</icon>
                         </numIndex>
-                        <numIndex index="3">
+                        <numIndex index="2">
                             <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.hot</label>
                             <value>hot</value>
                             <icon>EXT:sic_osm/Resources/Public/Images/Layers/hot.png</icon>
                         </numIndex>
-                        <numIndex index="4">
+                        <numIndex index="3">
                             <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.opentopomap</label>
                             <value>opentopomap</value>
                             <icon>EXT:sic_osm/Resources/Public/Images/Layers/opentopomap.png</icon>
                         </numIndex>
-                        <numIndex index="5">
+                        <numIndex index="4">
                             <label>LLL:EXT:sic_osm/Resources/Private/Language/locallang_db.xlf:flexform.layer.cyclosm</label>
                             <value>cyclosm</value>
                             <icon>EXT:sic_osm/Resources/Public/Images/Layers/cyclosm.png</icon>

@@ -223,12 +223,8 @@
                 <target>Die Karte ist immer so breit wie die Spalte, in der sie steht. Auf kleinen Bildschirmen wird die Höhe auf 70 % der Bildschirmhöhe begrenzt.</target>
             </trans-unit>
             <trans-unit id="flexform.layer.description">
-                <source>Preview images: © OpenStreetMap contributors; map styles © OpenStreetMap Germany, memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</source>
-                <target>Vorschaubilder: © OpenStreetMap-Mitwirkende; Kartendarstellungen © OpenStreetMap Deutschland, memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</target>
-            </trans-unit>
-            <trans-unit id="flexform.layer.osmde">
-                <source>OpenStreetMap Germany (German labels)</source>
-                <target>OpenStreetMap Deutschland (deutsche Beschriftung)</target>
+                <source>Preview images: © OpenStreetMap contributors; map styles © memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</source>
+                <target>Vorschaubilder: © OpenStreetMap-Mitwirkende; Kartendarstellungen © memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</target>
             </trans-unit>
             <trans-unit id="flexform.layer.oepnv">
                 <source>Public transport map (bus and rail lines, stops)</source>

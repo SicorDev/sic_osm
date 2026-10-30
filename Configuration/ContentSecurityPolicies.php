@@ -28,7 +28,6 @@ return Map::fromEntries(
                 MutationMode::Extend,
                 Directive::ImgSrc,
                 new UriValue('https://tile.openstreetmap.org'),
-                new UriValue('https://tile.openstreetmap.de'),
                 new UriValue('https://tile.memomaps.de'),
                 new UriValue('https://*.tile.openstreetmap.fr'),
                 new UriValue('https://*.tile.opentopomap.org'),

@@ -2,7 +2,7 @@
 
 TYPO3 extension that shows **one place** on an OpenStreetMap map – as a static image rendered on the server (no data sent to third parties) or as an interactive Leaflet map, with a pin and an info box that visitors can open and close. Small and simple on purpose: for many places (address directories with categories and lists) use [sic_address](https://extensions.typo3.org/extension/sic_address) instead.
 
-> **Status: 1.0.0 (beta), tested on TYPO3 14.** Static and interactive map, two-click solution, info box, geocoding, backend map preview, TypoScript integration, pin colour, map layer selection with preview images and page module preview work. Planned: GPX tracks.
+> **Status: 1.0.1 (stable), tested on TYPO3 14.** Static and interactive map, two-click solution, info box, geocoding, backend map preview, TypoScript integration, pin colour, map layer selection with preview images and page module preview work. Planned: GPX tracks.
 
 ## Features
 
@@ -59,7 +59,7 @@ After installation:
 <f:cObject typoscriptObjectPath="lib.sicOsm.map" data="{map: 3, view: 'dynamic', layer: 'cyclosm'}" />
 ```
 
-`map` is the uid of the map record; `view` (`static` / `click` / `dynamic`) and `layer` (`osm` / `osmde` / `oepnv` / `hot` / `opentopomap` / `cyclosm`) are optional.
+`map` is the uid of the map record; `view` (`static` / `click` / `dynamic`) and `layer` (`osm` / `oepnv` / `hot` / `opentopomap` / `cyclosm`) are optional.
 
 ## Configuration
 
@@ -109,7 +109,7 @@ Partials: `Map/Static.html` (static image), `Map/Dynamic.html` (interactive map)
 |---|---|
 | Static image | None – the image is rendered on your server |
 | Two-click view | Before the click: none (static image). After the click: like the interactive map. The choice "Remember for this visit" is stored in the browser's sessionStorage (no cookie, deleted when the browser is closed) |
-| Interactive map | The visitor's browser loads map tiles from the tile server of the chosen layer (IP address, user agent, referrer): `tile.openstreetmap.org` (OpenStreetMap Foundation, UK), `tile.openstreetmap.de` (FOSSGIS e.V., DE), `tile.memomaps.de` (public transport map, MeMoMaps, DE – free to use, but high-traffic sites must host it themselves), `tile.openstreetmap.fr` (OpenStreetMap France: layer Humanitarian), `tile.opentopomap.org` (OpenTopoMap, DE) or `tile-cyclosm.openstreetmap.fr` (OpenStreetMap France). Mention this in your privacy policy. |
+| Interactive map | The visitor's browser loads map tiles from the tile server of the chosen layer (IP address, user agent, referrer): `tile.openstreetmap.org` (OpenStreetMap Foundation, UK), `tile.memomaps.de` (public transport map, MeMoMaps, DE – free to use, but high-traffic sites must host it themselves), `tile.openstreetmap.fr` (OpenStreetMap France: layer Humanitarian), `tile.opentopomap.org` (OpenTopoMap, DE) or `tile-cyclosm.openstreetmap.fr` (OpenStreetMap France). Mention this in your privacy policy. |
 | Geocoding (backend) | When saving a new map record or clicking the button, the server sends the address to Nominatim (OpenStreetMap Foundation) – no visitor data, and not the editor's IP address |
 | Map preview (backend) | The editor's browser loads OSM standard tiles from `tile.openstreetmap.org` |
 

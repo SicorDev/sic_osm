@@ -169,10 +169,7 @@
                 <source>The map is always as wide as the column it is placed in. On small screens the height is limited to 70% of the screen height.</source>
             </trans-unit>
             <trans-unit id="flexform.layer.description">
-                <source>Preview images: © OpenStreetMap contributors; map styles © OpenStreetMap Germany, memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</source>
-            </trans-unit>
-            <trans-unit id="flexform.layer.osmde">
-                <source>OpenStreetMap Germany (German labels)</source>
+                <source>Preview images: © OpenStreetMap contributors; map styles © memomaps.de (CC-BY-SA), Humanitarian OpenStreetMap Team, OpenTopoMap (CC-BY-SA), CyclOSM.</source>
             </trans-unit>
             <trans-unit id="flexform.layer.oepnv">
                 <source>Public transport map (bus and rail lines, stops)</source>

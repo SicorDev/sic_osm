@@ -1,6 +1,6 @@
 {
     "name": "sicor/sic-osm",
-    "description": "OpenStreetMap – one place on a map: static image rendered on the server (GDPR-friendly), interactive Leaflet map or two-click solution, with info box, geocoding and backend map preview",
+    "description": "GDPR-friendly OpenStreetMap for one location: a static image rendered server-side, an interactive Leaflet map, or a two-click privacy solution, with info box, pin colours, several map styles, geocoding and a backend map preview. No API key required, Leaflet is bundled.",
     "type": "typo3-cms-extension",
     "license": "GPL-2.0-or-later",
     "authors": [

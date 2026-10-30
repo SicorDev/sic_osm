@@ -36,9 +36,6 @@
             <trans-unit id="map.popup.close">
                 <source>Close info box</source>
             </trans-unit>
-            <trans-unit id="map.attribution.osmde">
-                <source><![CDATA[© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors | Map style: <a href="https://www.openstreetmap.de" target="_blank" rel="noopener noreferrer">OpenStreetMap Germany</a> (FOSSGIS e.V.)]]></source>
-            </trans-unit>
             <trans-unit id="map.attribution.oepnv">
                 <source><![CDATA[Map <a href="https://memomaps.de" target="_blank" rel="noopener noreferrer">memomaps.de</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA</a>, map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors (<a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener noreferrer">ODbL</a>)]]></source>
             </trans-unit>
